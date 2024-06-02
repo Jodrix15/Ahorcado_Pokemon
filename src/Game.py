@@ -8,6 +8,9 @@ import Pistas as p
 
 lettersUsed = []
 
+def letters():
+    return lettersUsed
+
 def getLetterSpace(numGen):
     lettersUsed.clear()
     id = o.getPokemonByGen(numGen)
@@ -95,6 +98,8 @@ def writeLetter(pokeName, pokeSpaces, dificultad):
             isFail = True
             lettersUsed.append(letter)
 
+    print(lettersUsed)
+
     return newPokeSpaces, isFail, msj, volver
 
 
@@ -164,8 +169,8 @@ def startGame():
                 numHint = 1
 
                 while not finalizar:
-
-                    itz.showGame(intentos, pistas, pokeSpaces, vidas, msj, numFallos, dificultad, pistasDisponibles)
+                    print(lettersUsed)
+                    itz.showGame(intentos, pistas, pokeSpaces, vidas, msj, numFallos, dificultad, pistasDisponibles, lettersUsed)
                     option = o.getOptionInt(["1", "2", "3", "4"])
 
                     if option == 1:

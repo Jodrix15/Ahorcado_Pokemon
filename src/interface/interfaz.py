@@ -1,4 +1,5 @@
-from src import Game as g
+import src.Game as g
+import src.chooseOption as co
 
 
 def interface(numFallo, pokeSpaces):
@@ -7,7 +8,7 @@ def interface(numFallo, pokeSpaces):
     print(getAhorcado(numFallo, pokeSpaces)+"\n"+
           "===================================================")
 
-def showGame(intentos, pistas, pokeSpaces, vidas, msj, numFallos, dificultad, pistasDisponibles):
+def showGame(intentos, pistas, pokeSpaces, vidas, msj, numFallos, dificultad, pistasDisponibles, lettersUsed):
     print("\n"+msj)
     print(f"\nTurno: {intentos}\t Vidas Restantes: {vidas}")
     if len(pistas) > 0 and len(pistas) < 3:
@@ -17,7 +18,7 @@ def showGame(intentos, pistas, pokeSpaces, vidas, msj, numFallos, dificultad, pi
     print("\n")
     if dificultad != "d":
         print(f"Letras Usadas:", end=" ")
-        for letra in g.lettersUsed:
+        for letra in lettersUsed:
             print(f"{letra}", end="   ")
     if dificultad == "f":
         interface(numFallos, pokeSpaces)
@@ -26,7 +27,7 @@ def showGame(intentos, pistas, pokeSpaces, vidas, msj, numFallos, dificultad, pi
     elif dificultad == "d":
         interface(numFallos + 3, pokeSpaces)
 
-    src.chooseOption.menu.menu(pistasDisponibles)
+    co.menu.menu(pistasDisponibles)
 
 def getAhorcado(numFallo, pokeSpaces):
     ahorcado = [

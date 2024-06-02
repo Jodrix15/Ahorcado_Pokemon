@@ -1,4 +1,9 @@
 import Game as g
 
-g.startGame()
+def main ():
+    g.startGame()
+
+if __name__ == "__main__":
+    main()
+
 
