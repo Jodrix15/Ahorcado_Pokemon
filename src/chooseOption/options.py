@@ -1,6 +1,6 @@
 import random as rand
-from chooseOption import menu as m
-from utils import Utils as u
+from src.chooseOption import menu as m
+from src.utils import Utils as u
 
 
 def getOptionInt(opciones):

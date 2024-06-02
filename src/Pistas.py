@@ -1,5 +1,6 @@
-from ApiManager import pokemonData as pd
-from chooseOption import options as o
+from src.ApiManager import pokemonData as pd
+from src.chooseOption import options as o
+
 
 def getHints(numHint, pokeName, dificultad):
     hint = ""

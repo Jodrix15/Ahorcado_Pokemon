@@ -1,9 +1,8 @@
-from ApiManager import pokemonData as pd
-from chooseOption import options as o
-from chooseOption import menu as m
+from src.ApiManager import pokemonData as pd
+from src.chooseOption import options as o, menu as m
 import os
-from difficulty import modosDificultad as md
-from interface import interfaz as itz
+from src.difficulty import modosDificultad as md
+from src.interface import interfaz as itz
 from utils import Utils as u
 import Pistas as p
 

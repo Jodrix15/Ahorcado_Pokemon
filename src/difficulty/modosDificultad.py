@@ -1,18 +1,14 @@
-import chooseOption as o
-import utils as u
-import chooseOption as c
-
 def getSelectDificulty():
     terminarSeleccion = False
     dificultad = ""
     while not terminarSeleccion:
-        dificultad = o.options.getDifficulty("\nEscoge la dificultad del juego: ")
+        dificultad = src.chooseOption.options.getDifficulty("\nEscoge la dificultad del juego: ")
 
         if dificultad in ["f", "n", "d", "s", "garmendia"]:
             terminarSeleccion = True
         elif dificultad == "i":
-            c.menu.help()
-            u.Utils.enterClear()
+            src.chooseOption.menu.help()
+            src.utils.Utils.enterClear()
 
 
     return dificultad

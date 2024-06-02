@@ -1,5 +1,5 @@
-import Game as g
-import chooseOption as c
+from src import Game as g
+
 
 def interface(numFallo, pokeSpaces):
     print("\n\n===============WHO'S THAT POKÉMON???===============\n")
@@ -26,7 +26,7 @@ def showGame(intentos, pistas, pokeSpaces, vidas, msj, numFallos, dificultad, pi
     elif dificultad == "d":
         interface(numFallos + 3, pokeSpaces)
 
-    c.menu.menu(pistasDisponibles)
+    src.chooseOption.menu.menu(pistasDisponibles)
 
 def getAhorcado(numFallo, pokeSpaces):
     ahorcado = [
