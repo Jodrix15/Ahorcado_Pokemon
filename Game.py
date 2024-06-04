@@ -93,12 +93,19 @@ def writeLetter(pokeName, pokeSpaces, dificultad):
                 lettersUsed.append(letter)
 
         else:
-            msj = f"OH, QUE PENA!! El pokémon no tiene la letra '{letter}'"
-            newPokeSpaces = pokeSpaces
-            isFail = True
-            lettersUsed.append(letter)
+            if letter in lettersUsed:
+                msj = f"¡¡¡OH VAYA!!! Parece que ya habías dicho esa letra"
+                newPokeSpaces = pokeSpaces
+                if dificultad == "d":
+                    isFail = True
+            else:
+                msj = f"OH, QUE PENA!! El pokémon no tiene la letra '{letter}'"
+                newPokeSpaces = pokeSpaces
+                isFail = True
 
-    print(lettersUsed)
+            if letter not in lettersUsed:
+                lettersUsed.append(letter)
+
 
     return newPokeSpaces, isFail, msj, volver
 
@@ -214,7 +221,10 @@ def startGame():
                             pista = 1
                             numHint += 1
                         else:
-                            print("Solo una pista por turno hasta un máximo de tres")
+                            if pistasDisponibles == 0:
+                                print("Has agotado todas las pistas")
+                            else:
+                                print("Solo una pista por turno hasta un máximo de tres")
                         u.enterClear()
 
                     elif option == 4:
